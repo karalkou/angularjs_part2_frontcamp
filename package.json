@@ -1,7 +1,7 @@
 {
     "name": "KYS_angularjs_part2_frontcamp",
     "version": "1.0.0",
-    "description": "Simple angularjs todo app",
+    "description": "AngulaJS App FrontCamp HT2",
     "main": "/src/todo.js",
     "scripts": {
         "lint-js": "eslint --ignore-pattern \"!**/.*\" .",
