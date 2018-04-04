@@ -1,6 +1,18 @@
 # angularjs_part2_frontcamp
 
-### Task is to create the admin panel using latest AngularJS:
+## Notes:
+- inside of */server/config* should be *'db.js'* file with contents similar to the below one
+    ```
+    module.exports = {
+        url : 'mongodb://<user name>:<user password>@ds217138.mlab.com:17138/node_js_frontcamp'
+    };
+    ```
+- logs write to *'/app/access.log'* file (morgan logger is in use)
+
+---
+---
+
+## Task is to create the admin panel using latest AngularJS:
 
 1. Add AngularJS 1.6.1 to a project
 2. Add minimum functionality
