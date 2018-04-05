@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #d3afaf;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+.error-msgs {
+    padding: 0;
+    list-style: none;
+    li {
+        font-weight: bold;
+        color: firebrick;
+    }
+}
+
+.blogForm {
+    .blogFormInput {
+        display: inline-block;
+        width: 100%;
+    }
+}

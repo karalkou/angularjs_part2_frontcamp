@@ -1,0 +1,47 @@
+<h2 ng-if="!$ctrl.changingBlogId">Add Blog</h2>
+<h2 ng-if="$ctrl.changingBlogId">Edit Blog</h2>
+<!-- form -->
+<form class="blogForm" name="blogForm">
+    <!-- title -->
+    <div class="blogFormInput">
+        <input name="blogTitleInput"
+               type="text"
+               placeholder="Title"
+               required
+               add-edit-validation
+               ng-model="$ctrl.newBlogTitle" />
+    </div>
+    <ul class="error-msgs" ng-messages="blogForm.blogTitleInput.$error">
+        <li ng-message="maxLengthValidator">Error! Max length is 10 symbols!</li>
+        <li ng-if="blogForm.blogTitleInput.$dirty || !$ctrl.submitted" ng-message="required">Error! Blog title is required!</li>
+    </ul>
+
+    <!-- author -->
+    <div class="blogFormInput">
+        <input name="blogAuthorInput"
+               type="text"
+               placeholder="Author"
+               required
+               ng-model="$ctrl.newBlogAuthor" />
+    </div>
+    <ul class="error-msgs" ng-messages="blogForm.blogAuthorInput.$error">
+        <li ng-if="blogForm.blogAuthorInput.$dirty || !$ctrl.submitted" ng-message="required">Error! Blog author is required!</li>
+    </ul>
+
+    <!-- message -->
+    <div class="blogFormInput">
+		<textarea name="blogMessageInput"
+                  placeholder="Message"
+                  required
+                  ng-model="$ctrl.newBlogMessage" >
+		</textarea>
+    </div>
+    <ul class="error-msgs" ng-messages="blogForm.blogMessageInput.$error">
+        <li ng-if="blogForm.blogMessageInput.$dirty || !$ctrl.submitted" ng-message="required">Error! Blog message is required!</li>
+    </ul>
+
+    <!-- add/edit button -->
+    <input ng-if="!$ctrl.changingBlogId" type="button" value="Add" ng-click="$ctrl.addBlog()" />
+    <input ng-if="$ctrl.changingBlogId" type="button" value="Edit" ng-click="$ctrl.editTodo()" />
+</form>
+<a href="/">Home</a>

@@ -1,0 +1,14 @@
+<h3>Blogs count: {{ $ctrl.blogs.length }}</h3>
+<span ng-if="$ctrl.blogs.length === 0">No blogs!</span>
+<span ng-if="$ctrl.blogs.length > 0">
+	Hey! There are {{ $ctrl.blogs.length }} blogs.
+</span>
+<ul ng-repeat="blog in $ctrl.blogs">
+    <li>
+        <label>
+            <span ng-dblclick="$ctrl.activateEditBlog(blog._id)"> {{ blog.title }} </span>
+        </label>
+        : {{ blog.date }}
+        <button ng-click="$ctrl.removeBlog(blog._id)">Delete Blog</button>
+    </li>
+</ul>
