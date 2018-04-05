@@ -1,4 +1,4 @@
-function blogsFactory($http, $q) {
+function blogsFactory($http, $q, $resource) {
     let blogsList = [];
 
     return {
@@ -9,6 +9,13 @@ function blogsFactory($http, $q) {
                 def.resolve(blogsList);
                 return def.promise;
             } else {
+                /*let getArticlesResponse = $resource("/api/blogs").query(
+                    { method: "GET" },
+                    response => {
+                        return response;
+                    }
+                );
+                console.log('--- ', getArticlesResponse);*/
                 return $http({
                     method: 'GET',
                     url: '/api/blogs'
@@ -65,6 +72,6 @@ function blogsFactory($http, $q) {
     };
 }
 
-blogsFactory.$inject = ['$http', '$q'];
+blogsFactory.$inject = ['$http', '$q', '$resource'];
 
 export default blogsFactory;

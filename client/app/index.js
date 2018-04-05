@@ -1,6 +1,7 @@
 import angular from 'angular';
 import messages from 'angular-messages';
 import route from 'angular-route';
+import resource from 'angular-resource';
 import blogsListComponent from './components/blogList/blogList.js';
 import addEditBlogComponent from './components/addEditArticle/addEditArticle.js';
 import addBlogBtnComponent from './components/addArticleButton/addArticleButton.js';
@@ -10,7 +11,7 @@ import blogsFactory from './factories/blogs.factory.js';
 
 import '../main.scss';
 
-let app = angular.module('blogsApp', [route, messages]);
+let app = angular.module('blogsApp', [route, messages, resource]);
 
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
