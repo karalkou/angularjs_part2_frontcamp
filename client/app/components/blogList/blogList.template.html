@@ -3,8 +3,8 @@
 <span ng-if="$ctrl.blogs.length > 0">
 	Hey! There are {{ $ctrl.blogs.length }} blogs.
 </span>
-<ul ng-repeat="blog in $ctrl.blogs">
-    <li>
+<ul ng-repeat="blog in $ctrl.blogs" class="blog-list">
+    <li class="blog-list__item">
         <label>
             <span ng-dblclick="$ctrl.activateEditBlog(blog._id)"> {{ blog.title }} </span>
         </label>

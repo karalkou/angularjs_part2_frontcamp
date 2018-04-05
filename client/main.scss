@@ -18,6 +18,17 @@ body {
     background-color: #e6ecf0;
 }
 
+.blog-list {
+    list-style: none;
+    padding: 0;
+}
+
+.blog-list__item {
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 .blogForm {
     .blogFormInput {
         display: inline-block;
