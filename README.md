@@ -30,8 +30,8 @@
     2. ~~Make sure that "Add article"/"Edit article" views have different routes, i.e.~~
         1. ~~/admin/article/<articleId>/edit~~
         2. ~~/admin/article/add~~
-    3. Use Resource to make requests to a server.
-5. To have more experience *
+    3. ~~Use Resource to make requests to a server.~~
+5. ~~To have more experience *~~
     1. ~~Create pagination component and use it to display a list of articles~~
     2. List of numbers for pagination buttons on should be generated using custom Filter
 * Making  #5 without part (b) can be also considered as "excellent"
