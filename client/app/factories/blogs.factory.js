@@ -1,4 +1,3 @@
-// import { SERVER_URL } from '../config.js';
 function blogsFactory($http, $q) {
     let blogsList = [];
 

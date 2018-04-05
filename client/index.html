@@ -10,8 +10,8 @@
 <body>
     <div class="page-container">
         <div id="mainContainer" ng-app="blogsApp">
-            <div ng-controller="blogsAppController">
-                <span ng-if="isLoading">Loading...</span>
+            <div ng-controller="blogsAppController as $ctrl">
+                <span ng-if="$ctrl.isLoading">Loading...</span>
                 <ng-view></ng-view>
             </div>
         </div>

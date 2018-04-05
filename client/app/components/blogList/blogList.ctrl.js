@@ -1,5 +1,10 @@
+import { ARTICLES_PER_PAGE } from '../config.js';
+
 function blogController($scope, blogsFactory, $location) {
     let ctrl = this;
+
+    ctrl.page = 0;
+    ctrl.articlesPerPage = ARTICLES_PER_PAGE;
 
     blogsFactory.getArticles()
         .then(function(res) {

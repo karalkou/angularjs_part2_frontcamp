@@ -4,6 +4,7 @@ import route from 'angular-route';
 import blogsListComponent from './components/blogList/blogList.js';
 import addEditBlogComponent from './components/addEditArticle/addEditArticle.js';
 import addBlogBtnComponent from './components/addArticleButton/addArticleButton.js';
+import paginationComponent from './components/pagination/pagination.js';
 import addEditValidationDir from './directives/addEditValidation.directive.js';
 import blogsFactory from './factories/blogs.factory.js';
 
@@ -11,11 +12,11 @@ import '../main.scss';
 
 let app = angular.module('blogsApp', [route, messages]);
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/blogs', {
             template: `
-			<blogs-list></blogs-list>
+			<blogs-list blogs="$ctrl.blogs"></blogs-list>
 			<add-blog-btn></add-blog-btn>
 		`
         })
@@ -30,15 +31,27 @@ app.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
+app.filter('range', function () {
+    return function (val, range) {
+        range = parseInt(range);
+        for (let i = 0; i < range; i += 1)
+            val.push(i);
+        return val;
+    };
+});
+
 app.directive('addEditValidation', addEditValidationDir);
 
 app.factory('blogsFactory', blogsFactory);
 
 app.controller('blogsAppController', ['$scope', 'blogsFactory', function ($scope, blogsFactory) {
-    $scope.isLoading = true;
+    let ctrl = this;
+    ctrl.isLoading = true;
+
     blogsFactory.getArticles()
-        .then(function() {
-            $scope.isLoading = false;
+        .then(function (res) {
+            ctrl.blogs = res;
+            ctrl.isLoading = false;
         })
 }]);
 
@@ -46,3 +59,4 @@ app.controller('blogsAppController', ['$scope', 'blogsFactory', function ($scope
 app.component('blogsList', blogsListComponent);
 app.component('addBlogBtn', addBlogBtnComponent);
 app.component('addEditBlog', addEditBlogComponent);
+app.component('pagination', paginationComponent);
