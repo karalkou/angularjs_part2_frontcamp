@@ -19,9 +19,14 @@ function blogsFactory($http, $q) {
 
         },
         addBlog: function addBlog(newBlog) {
-            return $http.put('/api/blogs', newBlog)
+            return $http({
+                method: 'POST',
+                url: '/api/blogs',
+                data: `title=${newBlog.title}&author=${newBlog.author}&body=${newBlog.body}`,
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
                 .then(function(res) {
-                    blogsList.push(res.data.blog);
+                    blogsList.push(res.data);
                     return blogsList;
                 })
         },
