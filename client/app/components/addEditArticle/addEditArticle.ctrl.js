@@ -5,12 +5,12 @@ function addEditBlogController($scope, blogsFactory, $routeParams, $location) {
     ctrl.changingBlogId = $routeParams.id || '';
 
     if (ctrl.changingBlogId) {
-        blogsFactory.getBlogs()
+        blogsFactory.getArticles()
             .then(function(res) {
                 let blog = res.find(elem => elem._id === ctrl.changingBlogId);
                 ctrl.newBlogTitle = blog.title;
                 ctrl.newBlogAuthor = blog.author;
-                ctrl.newBlogMessage = blog.message;
+                ctrl.newBlogMessage = blog.body;
             })
     }
 
@@ -18,7 +18,7 @@ function addEditBlogController($scope, blogsFactory, $routeParams, $location) {
         let newBlog = {
             title: ctrl.newBlogTitle,
             author: ctrl.newBlogAuthor,
-            message: ctrl.newBlogMessage
+            body: ctrl.newBlogMessage
         };
 
         ctrl.submitted = true;
@@ -32,7 +32,7 @@ function addEditBlogController($scope, blogsFactory, $routeParams, $location) {
     ctrl.addBlog = function () {
         let newBlog = ctrl.getNewBlog();
 
-        if (!newBlog.title || !newBlog.author || !newBlog.message) {
+        if (!newBlog.title || !newBlog.author || !newBlog.body) {
             ctrl.submitted = false;
             return;
         }
@@ -44,7 +44,7 @@ function addEditBlogController($scope, blogsFactory, $routeParams, $location) {
     ctrl.editTodo = function() {
         let newBlog = ctrl.getNewBlog();
 
-        if (!newBlog.title || !newBlog.author || !newBlog.message) {
+        if (!newBlog.title || !newBlog.author || !newBlog.body) {
             ctrl.submitted = false;
             return;
         }

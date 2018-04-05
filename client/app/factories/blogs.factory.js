@@ -3,7 +3,7 @@ function blogsFactory($http, $q) {
     let blogsList = [];
 
     return {
-        getBlogs: function getBlogs() {
+        getArticles: function getArticles() {
             let def = $q.defer();
 
             if (blogsList.length) {
@@ -12,8 +12,8 @@ function blogsFactory($http, $q) {
             } else {
                 return $http.get('/api/blogs')
                     .then(function(res) {
-                        blogsList = res.data.blogs;
-                        return res.data.blogs;
+                        blogsList = res.data;
+                        return res.data;
                     })
             }
 

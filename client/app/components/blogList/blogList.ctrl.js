@@ -1,7 +1,7 @@
 function blogController($scope, blogsFactory, $location) {
     let ctrl = this;
 
-    blogsFactory.getBlogs()
+    blogsFactory.getArticles()
         .then(function(res) {
             ctrl.blogs = res;
         });

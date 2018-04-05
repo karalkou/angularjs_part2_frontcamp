@@ -36,7 +36,7 @@ app.factory('blogsFactory', blogsFactory);
 
 app.controller('blogsAppController', ['$scope', 'blogsFactory', function ($scope, blogsFactory) {
     $scope.isLoading = true;
-    blogsFactory.getBlogs()
+    blogsFactory.getArticles()
         .then(function() {
             $scope.isLoading = false;
         })

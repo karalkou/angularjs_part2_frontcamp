@@ -8,10 +8,12 @@
     <base href="/"/>
 </head>
 <body>
-    <div id="mainContainer" ng-app="blogsApp">
-        <div ng-controller="blogsAppController">
-            <span ng-if="isLoading">Loading...</span>
-            <ng-view></ng-view>
+    <div class="page-container">
+        <div id="mainContainer" ng-app="blogsApp">
+            <div ng-controller="blogsAppController">
+                <span ng-if="isLoading">Loading...</span>
+                <ng-view></ng-view>
+            </div>
         </div>
     </div>
 </body>

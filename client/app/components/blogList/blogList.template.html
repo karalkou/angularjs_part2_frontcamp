@@ -8,7 +8,10 @@
         <label>
             <span ng-dblclick="$ctrl.activateEditBlog(blog._id)"> {{ blog.title }} </span>
         </label>
-        : {{ blog.date }}
-        <button ng-click="$ctrl.removeBlog(blog._id)">Delete Blog</button>
+        : <small>{{ blog.updatedAt | date:"MM/dd/yy 'at' h:mma" }}</small>
+        <button ng-click="$ctrl.removeBlog(blog._id)" style="display: block; margin-top: 5px;">Delete</button>
     </li>
 </ul>
+<p style="background-color: lightgray; padding: 10px 0;">
+    <b>Hint:</b> Double click on article to open edit form
+</p>

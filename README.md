@@ -14,9 +14,9 @@
 
 ## Task is to create the admin panel using latest AngularJS:
 
-1. Add AngularJS 1.6.1 to a project
+1. ~~Add AngularJS 1.6.1 to a project~~
 2. Add minimum functionality
-    1. Create a component for displaying amount of articles and list of their titles
+    1. ~~Create a component for displaying amount of articles and list of their titles~~
     2. Create a form (using native directives) to add an article
 3. Add more functionality
     1. Add validation to the form
