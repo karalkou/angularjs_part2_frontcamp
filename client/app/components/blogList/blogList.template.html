@@ -1,17 +1,19 @@
-<h3>Blogs count: {{ $ctrl.blogs.length }}</h3>
-<span ng-if="$ctrl.blogs.length === 0">No blogs!</span>
+<h3>Total amount of articles: {{ $ctrl.blogs.length }}</h3>
+<span ng-if="$ctrl.blogs.length === 0">No articles! =(</span>
 <span ng-if="$ctrl.blogs.length > 0">
-	Hey! There are {{ $ctrl.blogs.length }} blogs.
+	There are {{ $ctrl.blogs.length }} articles.
 </span>
 <ul ng-repeat="blog in $ctrl.blogs" class="blog-list">
     <li class="blog-list__item">
         <label>
-            <span ng-dblclick="$ctrl.activateEditBlog(blog._id)"> {{ blog.title }} </span>
+            <b>{{ blog.title }}</b>
         </label>
         : <small>{{ blog.updatedAt | date:"MM/dd/yy 'at' h:mma" }}</small>
-        <button ng-click="$ctrl.removeBlog(blog._id)" style="display: block; margin-top: 5px;">Delete</button>
+        <p>{{ blog.body }}</p>
+        <div>
+            <button ng-click="$ctrl.removeBlog(blog._id)" style="margin-top: 5px; margin-right: 10px;">Delete</button>
+            <button ng-click="$ctrl.activateEditBlog(blog._id)" style="margin-top: 5px;">Edit</button>
+        </div>
+
     </li>
 </ul>
-<p style="background-color: lightgray; padding: 10px 0;">
-    <b>Hint:</b> Double click on article to open edit form
-</p>

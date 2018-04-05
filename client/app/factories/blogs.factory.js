@@ -10,7 +10,10 @@ function blogsFactory($http, $q) {
                 def.resolve(blogsList);
                 return def.promise;
             } else {
-                return $http.get('/api/blogs')
+                return $http({
+                    method: 'GET',
+                    url: '/api/blogs'
+                })
                     .then(function(res) {
                         blogsList = res.data;
                         return res.data;
@@ -18,6 +21,7 @@ function blogsFactory($http, $q) {
             }
 
         },
+
         addBlog: function addBlog(newBlog) {
             return $http({
                 method: 'POST',
@@ -30,22 +34,32 @@ function blogsFactory($http, $q) {
                     return blogsList;
                 })
         },
+
         removeBlog: function removeBlog(id) {
             let index = blogsList.findIndex(elem => elem._id === id);
 
-            return $http.delete('/api/blogs/' + id)
+            return $http({
+                method: 'DELETE',
+                url: `/api/blogs/${id}`
+            })
                 .then(function(res) {
                     blogsList.splice(index, 1);
                     return blogsList;
                 })
         },
+
         changeBlog: function(blogId, newBlog) {
             let index = blogsList.findIndex(elem => elem._id === blogId);
             newBlog.id = blogId;
 
-            return $http.post('/api/blogs/update/', newBlog)
+            return $http({
+                method: 'PUT',
+                url: `/api/blogs/${blogId}`,
+                data: `title=${newBlog.title}&author=${newBlog.author}&body=${newBlog.body}`,
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
                 .then(function(res) {
-                    blogsList[index] = res.data.blog;
+                    blogsList[index] = res.data;
                     return blogsList;
                 })
         }
