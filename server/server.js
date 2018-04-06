@@ -10,6 +10,14 @@ const blogs = require('./app/routes/blogs_routes');
 const app  = express();
 const port = 8050;
 
+const mongoose = require('mongoose');
+const remoteDbUrl = require('./config/db').url;
+
+mongoose.connect(remoteDbUrl)
+    .then(() => console.log('connection succesful'))
+    .catch((err) => console.error(err));
+const db = mongoose.connection;
+
 // create a write stream (in append mode)
 let accessLogStream = fs.createWriteStream(path.join(__dirname, 'app/access.log'), {flags: 'a'});
 app.use(logger('combined', {stream: accessLogStream}));
@@ -40,3 +48,5 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.send({ status: err.status });
 });
+
+module.exports = app;

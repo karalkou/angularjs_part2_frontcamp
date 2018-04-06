@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const BlogModel = require('../models/blog');
-const remoteDbUrl = require('./../../config/db').url;
+// const remoteDbUrl = require('./../../config/db').url;
 
-mongoose.connect(remoteDbUrl);
-const db = mongoose.connection;
+// mongoose.connect(remoteDbUrl);
+// const db = mongoose.connection;
 
 /**
  * GETs blogs in database.
