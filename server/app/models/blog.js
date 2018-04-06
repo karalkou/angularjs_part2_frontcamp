@@ -10,4 +10,19 @@ const BlogSchema = new Schema({
     updatedAt: { type: Date, default: Date.now }
 });
 
+/*const BlogSchema = new Schema({
+    title: {
+        type: String,
+        required: [true, 'Need blog title']
+    },
+    author: {
+        type: String,
+        required: [true, 'Need blog author']
+    },
+    views: Number,
+    body: String,
+    createdAt: {type: Date, default: Date.now},
+    updatedAt: {type: Date, default: Date.now}
+});*/
+
 module.exports = mongoose.model('Blog', BlogSchema);

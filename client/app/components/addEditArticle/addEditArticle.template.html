@@ -12,7 +12,7 @@
                ng-model="$ctrl.newBlogTitle" />
     </div>
     <ul class="error-msgs" ng-messages="blogForm.blogTitleInput.$error">
-        <li ng-message="maxLengthValidator">Error! Max length is 10 symbols!</li>
+        <li ng-message="maxLengthValidator">Error! Max length is 40 symbols!</li>
         <li ng-if="blogForm.blogTitleInput.$dirty || !$ctrl.submitted" ng-message="required">Error! Blog title is required!</li>
     </ul>
 

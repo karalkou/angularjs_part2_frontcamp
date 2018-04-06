@@ -4,7 +4,7 @@ export default function() {
         require: 'ngModel',
         link: function (scope, element, attr, ctrl) {
             function validator(ngModelValue) {
-                if (ngModelValue.length <= 10) {
+                if (ngModelValue.length <= 40) {
                     ctrl.$setValidity('maxLengthValidator', true);
                 } else {
                     ctrl.$setValidity('maxLengthValidator', false);
