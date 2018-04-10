@@ -9,6 +9,7 @@
     };
     ```
 - logs write to *'/app/access.log'* file (morgan logger is in use)
+- there were trouble during endpoints test (see [github issue](https://github.com/chaijs/chai-http/issues/165))
 
 ---
 ---
