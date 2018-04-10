@@ -1,0 +1,69 @@
+[
+    {
+        "createdAt": "2018-02-03T04:41:45.586Z",
+        "updatedAt": "2018-02-03T04:41:45.586Z",
+        "_id": "5a753d89aa7586161cef2403",
+        "title": "Zhabinsky's birthday was on 28.01.2018",
+        "author": "Yury Karalkou",
+        "views": 1,
+        "_v": 0
+    },
+    {
+        "createdAt": "2018-02-03T04:45:24.589Z",
+        "updatedAt": "2018-02-03T04:45:24.589Z",
+        "_id": "5a753e64ea59510b0ca6271c",
+        "title": "Documents (aka Objects)",
+        "author": "MLab",
+        "views": 100500,
+        "body": "From the \"Documents\" tab you can browse and search for objects in this collection. All standard query constructs are supported except for map/reduce queries. To use map/reduce, use the MongoDB shell (note that temporary result collections will be viewable in mLab). You can also add, edit, and delete individual documents from here. Bulk collection updates are not yet supported in this UI (although they are supported in the shell).",
+        "_v": 0
+    },
+    {
+        "createdAt": "2018-03-11T13:00:19.319Z",
+        "updatedAt": "2018-03-11T13:00:19.319Z",
+        "_id": "5aa52863fe4b8a1c34887f80",
+        "title": "Сучасная Лiтва - гэта не Лiтва, а Аўкштайцiя",
+        "author": "yury@yury.ru",
+        "body": "Балцкая частка гістарычнай Літвы падвяргалася моцнай усходнеславянскай асіміляцыі. Дзяржаўныя ўлады ў ВКЛ яшчэ больш узмацнілі гэты працэс, хоць кіруючая дынастыя і частка вышэйшай арыстакратыі былі балцкага паходжання. На балцкай тэрыторыі ўстанаўлівалася сістэма кіравання па ўзору ўсходнеславянскіх земляў і ў якасці дзяржаўнай уводзілася русінская (старабеларуская) мова. Лiнка: http://pawet.net/library/history/bel_history/kraucewicz/31/Гістарычная_Літва_і_этнагенез_беларусаў.html",
+        "_v": 0
+    },
+    {
+        "createdAt": "2018-03-11T13:06:51.330Z",
+        "updatedAt": "2018-03-11T13:06:51.330Z",
+        "_id": "5aa529ebfe4b8a1c34887f82",
+        "title": "Саратовские авиалинии",
+        "author": "yury.karalkou@gmail.com",
+        "body": "Сара́товские авиали́нии (юридическое название АО «Саратовские авиалинии», ранее работало под брендом Сара́виа) — российское авиапредприятие, занимающееся выполнением внутренних и международных регулярных и чартерных рейсов и эксплуатацией аэропорта Саратов-Центральный. По итогам 2017 года пассажиропоток авиакомпании составил 750 000 человек. Базируется в аэропортах Саратов-Центральный и Красноярск (Емельяново). Головной офис компании находится в Саратове.",
+        "_v": 0
+    },
+    {
+        "createdAt": "2018-03-11T14:12:14.965Z",
+        "updatedAt": "2018-03-11T14:12:14.965Z",
+        "_id": "5aa5393e1906c96fece7e401",
+        "title": "Redux Saga API: select(selector, ...args)",
+        "author": "yury.karalkou@gmail.com",
+        "body": "Creates an effect that instructs the middleware to invoke the provided selector on the current Store's state (i.e. returns the result of selector(getState(), ...args)). selector: Function - a function (state, ...args) => args. It takes the current state and optionally some arguments and returns a slice of the current Store's state args: Array<any> - optional arguments to be passed to the selector in addition of getState. If select is called without argument (i.e. yield select()) then the effect is resolved with the entire state (the same result of a getState() call).",
+        "_v": 0
+    },
+    {
+        "createdAt": "2018-04-05T17:15:42.660Z",
+        "updatedAt": "2018-04-05T17:15:42.660Z",
+        "_id": "5ac659be0191140e645ff95c",
+        "title": "London",
+        "author": "Wikipedia",
+        "body": "London is the capital and most populous city of England and the United Kingdom. The etymology of London is uncertain. It is an ancient name, attested already in the first century AD, usually in the Latinised form Londinium; for example, handwritten Roman tablets recovered in the city originating from AD 65/70-80 include the word Londinio ("
+        in
+        London
+        ").",
+        "_v": 0
+    },
+    {
+        "createdAt": "2018-04-05T17:18:40.286Z",
+        "updatedAt": "2018-04-05T17:18:40.286Z",
+        "_id": "5ac65a701d1ff013645ea056",
+        "title": "Minsk",
+        "author": "Yury",
+        "body": "Minsk is the most populous city of the Republic of Belarus.",
+        "_v": 0
+    }
+]
