@@ -8,7 +8,8 @@ const index = require('./app/routes/index');
 const blogs = require('./app/routes/blogs_routes');
 
 const app  = express();
-const port = 8050;
+const port = process.env.PORT || 8050;
+console.log('port: ', port);
 
 const mongoose = require('mongoose');
 const remoteDbUrl = require('./config/db').url;
