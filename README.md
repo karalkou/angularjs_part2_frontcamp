@@ -1,6 +1,7 @@
 # angularjs_part2_frontcamp
 
 ## Notes:
+- to launch app you should call *'yarn build-dev'* and *'yarn server-dev'* commands
 - inside of */server/config* should be *'db.js'* file with contents similar to the below one
     ```
     module.exports = {
