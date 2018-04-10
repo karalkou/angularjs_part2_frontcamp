@@ -24,6 +24,7 @@ let accessLogStream = fs.createWriteStream(path.join(__dirname, 'app/access.log'
 app.use(logger('combined', {stream: accessLogStream}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.listen(port, () => {
     console.log('We are live on ' + port);

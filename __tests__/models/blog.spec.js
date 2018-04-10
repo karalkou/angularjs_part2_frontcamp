@@ -2,7 +2,7 @@ const Blog = require('../../server/app/models/blog.js');
 const expect = require('chai').expect;
 
 describe('Blog schema', function() {
-    /*it('should be invalid if no author', function(done) {
+    it('should be invalid if no author', function(done) {
         let dummyBlog = new Blog({
             title: 'title',
             views: 1,
@@ -27,5 +27,5 @@ describe('Blog schema', function() {
             expect(err.errors.title).to.exist;
             done();
         })
-    })*/
+    })
 });

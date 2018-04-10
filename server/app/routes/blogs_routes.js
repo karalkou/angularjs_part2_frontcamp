@@ -42,7 +42,6 @@ router.get('/:id', getArticle);
  * POSTs created article instance
  */
 const postArticle = (req, res, next) => {
-    console.log('req.body: ', req.body);
     let blog = new BlogModel(req.body);
     blog.save()
         .then(createdBlog => {
