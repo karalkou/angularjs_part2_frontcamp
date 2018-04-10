@@ -2,21 +2,21 @@ process.env.NODE_ENV = 'test';
 
 const Blog = require('../../server/app/models/blog.js');
 
+const app = require('../../server/server.js');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const app = require('../../server/server.js');
 const should = chai.should();
 
 chai.use(chaiHttp);
 
 describe('Blogs', () => {
     let dummyBlog1 = {
-        author: 'ololo',
+        author: 'Test McTest',
         title: 'title',
         body: 'message'
     };
     let dummyBlog2 = {
-        author: 'ololo2',
+        author: 'Test McTest 2',
         title: 'title2',
         body: 'message2'
     };
@@ -81,11 +81,11 @@ describe('Blogs', () => {
         });
     });
 
-    describe('/POST blog', () => {
-        it('should post blog if all is ok', (done) => {
+    describe('/POST article', () => {
+        it('should post article if all is ok', (done) => {
             let blog = {
                 title: 'title',
-                author: 'ololo',
+                author: 'Test McTest',
                 body: 'message'
             };
 
@@ -100,6 +100,24 @@ describe('Blogs', () => {
                     done();
                 })
         });
+
+        it('should not post article without title', (done) => {
+            let blog = {
+                author: 'Test McTest',
+                message: 'message'
+            };
+
+            chai.request(app)
+                .post('/api/blogs')
+                .set('form', 'json')
+                .send(blog)
+                .end((err, res) => {
+                    if(err) done(err);
+                    res.should.have.status(412);
+                    res.body.should.be.a('object');
+                    done();
+                })
+        })
     });
 
     describe('/DELETE blog', () => {
