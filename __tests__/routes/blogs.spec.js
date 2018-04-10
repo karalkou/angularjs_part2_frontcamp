@@ -26,7 +26,7 @@ describe('Blogs', () => {
         });
     });
 
-    describe('/GET blogs', () => {
+    describe('/GET articles', () => {
         it('should get all blogs even if there is no blogs', (done) => {
             chai.request(app)
                 .get('/api/blogs')
@@ -37,7 +37,7 @@ describe('Blogs', () => {
                     done();
                 })
         });
-        it('should get all blogs', (done) => {
+        it('should get all articles', (done) => {
             let blog = new Blog(dummyBlog1);
             let blog2 = new Blog(dummyBlog2);
             blog.save(() => {
@@ -55,8 +55,8 @@ describe('Blogs', () => {
         });
     });
 
-    describe('/GET/:id blog', () => {
-        it('should get particular blog', (done) => {
+    describe('/GET/:id article', () => {
+        it('should get specific article', (done) => {
             let blog = new Blog(dummyBlog1);
             blog.save((err, blog) => {
                 chai.request(app)
@@ -71,7 +71,7 @@ describe('Blogs', () => {
                     })
             })
         });
-        it('should return 404 if no blog', (done) => {
+        it('should return 404 if no article founded', (done) => {
             chai.request(app)
                 .get('/api/blogs/' + 123)
                 .end((err, res) => {
@@ -120,8 +120,8 @@ describe('Blogs', () => {
         })
     });
 
-    describe('/DELETE blog', () => {
-        it('should delete blog', (done) => {
+    describe('/DELETE article', () => {
+        it('should delete article', (done) => {
             let blog = new Blog(dummyBlog1);
             blog.save((err, blog) => {
                 chai.request(app)
