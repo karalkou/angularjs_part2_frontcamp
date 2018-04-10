@@ -84,15 +84,17 @@ describe('Blogs', () => {
     describe('/POST blog', () => {
         it('should post blog if all is ok', (done) => {
             let blog = {
-                author: 'ololo',
                 title: 'title',
+                author: 'ololo',
                 body: 'message'
             };
 
             chai.request(app)
                 .post('/api/blogs')
+                .set('form', 'json')
                 .send(blog)
                 .end((err, res) => {
+                    if(err) done(err);
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     done();
